@@ -1,0 +1,30 @@
+There are three substrings of length  to consider: 'AAA', 'BCA'
+ and 'DDE'. The first substring is all 'A' characters, so u1='A'.
+ The second substring has all distinct characters, so U2='BCA'. 
+The third substring has 2 different characters, so U3='DE'. 
+Note that a subsequence maintains the original order of 
+characters encountered. 
+The order of characters in each subsequence shown is important.
+
+
+
+
+def merge_the_tools(string, k):
+    l=[]
+    m=0
+    for i in range(len(string)//k):
+        l.append(string[m:m+k])
+        m=m+k
+    print(l)
+    for v in l:
+        print(list(v))
+        print(dict.fromkeys(list(v)))
+        print(dict.fromkeys(list(v),1))
+        print(dict.fromkeys(list(v)).keys())
+        print(list(dict.fromkeys(list(v)).keys()))
+        print(''.join(list(dict.fromkeys(list(v)).keys())))
+    
+
+
+string, k = input(), int(input())
+merge_the_tools(string, k)
